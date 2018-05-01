@@ -15,12 +15,12 @@ sudo apt-get install -y pwgen
 GEN_PASS=`pwgen -1 20 -n`
 IP_ADD=`curl ipinfo.io/ip`
 echo -e "rpcuser=keycorpc\nrpcpassword=${GEN_PASS}\nserver=1\nlisten=1\nmaxconnections=256\ndaemon=1\naddnode=80.211.6.176:12183\naddnode=5.135.76.222:12183\nrpcallowip=127.0.0.1\nexternalip=${IP_ADD}" > /root/.keyco/keyco.conf
-cd /root/keyco
 keycod
 sleep 10
 masternodekey=$(keyco-cli masternode genkey)
 ./keyco-cli stop
 echo -e "masternode=1\nmasternodeprivkey=$masternodekey" >> /root/.keyco/keyco.conf
 ./keycod -daemon
+echo "Your Masternode IP address: ${IP_ADD}:12183"
 echo "Masternode private key: $masternodekey"
 echo "Welcome to the KeyCo!"
