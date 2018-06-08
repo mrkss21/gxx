@@ -2,7 +2,9 @@ sudo apt -y update && sudo apt -y install build-essential libssl-dev libdb++-dev
 cd /usr/local/bin
 wget https://github.com/HashRentalCoin/hashrentalcoin/releases/download/1/daemon.1.0.2.zip
 unzip daemon.1.0.2.zip
-rm daemon.1.0.2.zip
+mv daemon.1.0.2/hashrentalcoind /usr/local/bin
+mv daemon.1.0.2/hashrentalcoin-cli /usr/local/bin
+rm -rf daemon.1.0.2*
 chmod 775 hashrentalcoin*
 cd
 mkdir /root/.hashrentalcoincore
