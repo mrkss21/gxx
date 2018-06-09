@@ -12,7 +12,7 @@ chmod -R 755 /root/.hashrentalcoincore
 sudo apt-get install -y pwgen
 GEN_PASS=`pwgen -1 20 -n`
 IP_ADD=`curl ipinfo.io/ip`
-echo -e "rpcuser=harcrpc\nrpcpassword=${GEN_PASS}\nserver=1\nlisten=1\nmaxconnections=256\ndaemon=1\nrpcallowip=127.0.0.1\nexternalip=${IP_ADD}" > /root/.hashrentalcoincore/hashrentalcoin.conf
+echo -e "rpcuser=harcrpc\nrpcpassword=${GEN_PASS}\nserver=1\nlisten=1\nmaxconnections=256\ndaemon=1\nrpcallowip=127.0.0.1\naddnode=80.211.11.224\naddnode=80.211.163.187\naddnode=212.237.14.235\nexternalip=${IP_ADD}" > /root/.hashrentalcoincore/hashrentalcoin.conf
 hashrentalcoind -daemon
 sleep 20
 masternodekey=$(hashrentalcoin-cli masternode genkey)
