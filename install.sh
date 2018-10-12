@@ -53,6 +53,6 @@ gxxdaemon getinfo
 echo " "
 echo "MN ${mnip}:27513 $masternodekey "
 echo " "
-eсho "gxxdaemon masternode status"
-eсho "gxxdaemon getinfo"
+echo "gxxdaemon masternode status"
+echo "gxxdaemon getinfo"
 gxxdaemon masternode status
