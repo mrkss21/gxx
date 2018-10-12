@@ -5,7 +5,8 @@ gxxdaemon -daemon && sleep 7 && gxxdaemon stop
 rpcallowip=127.0.0.1
 rpcuser=$(pwgen -s 16 1)
 rpcpassword=$(pwgen -s 16 1)
-rpcport=8960\nserver=1
+rpcport=27513
+server=1
 listen=1
 maxconnections=32
 addnode=140.82.59.32:27513
